@@ -1,0 +1,34 @@
+1.User & Groups:
+ useradd username or edit /etc/passwd
+ passwd username or passwd --stdin username (to see password while typing) or echo 'password' | passwd --stdin username
+ usermod -s /bin/bash username or chsh username 
+ usermod -c "Description of User" username
+ userdel username (Will del user but home directory will exists) --> rm -r username (run this after that to delete cleanly)
+  userdel -r username - Delete's everything
+ useradd -u 50 -s /sbin/nologin -d /home/user -c "definition for user" username
+ groupadd -g 200 groupname
+ groupmod -g 2001 groupname
+ usermod -aG group username
+2.Password Management:
+ date -d "+95 days"
+ chage -m 0 -M 90 -W 7 -I 14 -E 2022-12-25 user
+ change -l username
+ chage -d 0 username or chage -m 0 username - ask user to change password when he logs in next time
+ usermod -L username - lock user Acc
+ usermod -u username - Unlock User Acc
+3.Files & permission:
+(u,g,o,a) (r,w,x) (4=r, 2=w, 1=x)
+ chmod g+rw file_name
+ chmod o-wx file_name
+ chmod a=x file_name
+ chmod 777 file_name
+ chmod 400 file_name
+4.SELinux
+ ls -Z or ls -Zd is used to see this user, role, type & securitu levels
+ getenforce 
+ setenforce
+ semanage fcontext -a -t httpd_sys_content_t "/sample(/.*)?" - run it in / 
+ restorecon -RFv /sample/ - to make changes
+ getsebool -a - to list all boolean type
+ getsebool httpd_enable_homedirs - of particular one
+ setsebool httpd_enable_homedirs - set boolean of particular one
