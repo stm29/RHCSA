@@ -62,6 +62,7 @@ RH124:
  tzselect
  timedatectl set-ntp true
   then restart chronyd service
+ chronyc sources -v
 9.Compressing & Archiving
  tar -czvf source_file dest_file 
  tar -xzvf source_file dest_file
