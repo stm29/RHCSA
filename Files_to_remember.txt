@@ -6,3 +6,4 @@ vi /etc/login.defs - Log In info, User definition
 vi /etc/sudoers - Edit here to give SUDO previlege for user
  -or you can add file to /etc/sudoers.d/ to give sudo privelege
 vi /etc/rsyslog.conf
+vi /etc/motd - to display information during log in
