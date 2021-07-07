@@ -123,5 +123,3 @@ ll /etc/yum.repos.d/
  find / -size +10M -size -15M - files between 10M
  find / -mmin 120 - files modified on 120min
  find / -mmin +120 - files modified before 2 hrs
-
-RH134:
